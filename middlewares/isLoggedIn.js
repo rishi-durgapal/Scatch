@@ -21,4 +21,4 @@ module.exports.isLoggedIn = async (req, res, next) => {
         req.flash('error', 'Something went wrong.');
         res.redirect('/');
     }
-};
+};  

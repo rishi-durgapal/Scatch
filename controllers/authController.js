@@ -55,10 +55,13 @@ module.exports.loginUser = async (req, res) => {
             }
             let token = generateToken(user);
             res.cookie('token', token);
-            res.send('User logged in successfully');
+            req.flash('success', 'Logged in successfully');
+            res.redirect('/shop');
+
         });
     } catch (err) {
         res.send(err.message);
+        res.redirect('/');
     }
 };
 
